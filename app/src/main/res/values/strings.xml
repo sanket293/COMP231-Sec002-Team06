@@ -15,9 +15,14 @@
     <string name="Name">Name</string>
     <string name="Phone_number">Phone Number</string>
     <string name="Phone">Phone</string>
+    <string name="AddGoal">Add Goal</string>
+    <string name="SetYourHabitOrGoal">Set Your Habit Or Goal</string>
+    <string name="EnterYourGoal">Enter Your Goal</string>
+    <string name="SetGoal">Set Goal</string>
 
 
     <string name="msg_UserSuccessfullyRegistered">User Successfully Registered</string>
+    <string name="msg_GoalSuccessfully">Goal Added Successfully</string>
 
 
     <string name="err_PasswordShouldNotdifferent">Please try again\nPassword should not be different</string>
@@ -28,6 +33,7 @@
     <string name="err_enter_your_phone">Please Enter Your Phone</string>
     <string name="err_enter_your_password">Please Enter Your Password</string>
     <string name="err_enter_your_confirm_password">Please Enter Your Confirm Password</string>
+    <string name="err_PleaseAddGoal">Please Enter Your Goal</string>
 
 
     <string name="prompt_email">Email</string>

@@ -158,9 +158,48 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+    public boolean addGoalString(String name ,String goalStr) {
+
+
+        try {
+            if (sqliteDb.isOpen()) {
+                sqliteDb.close();
+            }
+
+            if (goalStr.equalsIgnoreCase("")||name.equalsIgnoreCase("")) {
+                return false;
+            }
+
+            String query = "insert into UserGoalList(Name,Goal) values(" + name + "," + goalStr + ");";
+            sqliteDb = instance.getWritableDatabase();
+            sqliteDb.execSQL(query);
+
+        } catch (Exception e) {
+            System.out.println("DB ERROR  " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+    ////////    SELECT
+
+
+
     public static UserFields checkCredentials(String email, String password) {
 
-        UserFields userFields =null;
+        UserFields userFields = null;
         try {
             if (sqliteDb.isOpen()) {
                 sqliteDb.close();
@@ -172,7 +211,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             Cursor cursor = sqliteDb.rawQuery(query, null);
 
             if (cursor != null) {
-userFields=                new UserFields();
+                userFields = new UserFields();
 
                 while (cursor.moveToNext()) {
                     if (cursor.moveToFirst()) {
@@ -195,7 +234,7 @@ userFields=                new UserFields();
             System.out.println("DB ERROR  " + e.getMessage());
             e.printStackTrace();
         }
-            return userFields;
+        return userFields;
 
     }
 
